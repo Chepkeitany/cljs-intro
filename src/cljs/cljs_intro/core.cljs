@@ -12,15 +12,19 @@
   (.generate js/c3
     #js
     {:bindto "#chart"
-     :data #js {:columns #js [ #js ["data1" 30 200 100 400 150 250]]
+     :data #js {
+        :x "x"
+        :columns #js [ #js ["x" "Jan" "Feb" "Mar" "Apr" "May" "June" "July" "Aug" "Sep" "Oct" "Nov" "Dec"]
+                        #js  ["Months of the year" 30 200 100 400 150 250 300 450 200 100 50 300]]
      :type "bar"}
      :bar #js {:width #js {:ratio 0.5}}
-     :axis #js {:y #js {:label #js {:text "Signs up during the year"
+     :axis #js {:y #js {:label #js {:text "No of new signups in 2013"
                                     :position "outer-middle"
                                     :show true}
                         :show true
                         :max 400
-                        :min 0}}}))
+                        :min 0}
+                :x  #js {:type "category"}}}))
 
 (defn main []
   (chart))
