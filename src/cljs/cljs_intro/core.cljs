@@ -12,16 +12,16 @@
   (.generate js/c3
     #js
     {:bindto "#chart"
-     :data #js {:columns #js ["data1" 30 200 100 400 150 250]}}))
+     :data #js {:columns #js ["data1" 30 200 100 400 150 250 300 400 200 100 30 200]
+     :types #js {:data1 "bar"} 
+     :axes #js {:data1 "y"}}
+     :bar #js {:width #js {:ratio 0.5}}
+     :axis #js {:y #js {:label #js {:text "Signs up during the year"
+                                    :position "outer-middle"
+                                    :show true}}
+                :x #js {:label #js {:text "Months of the year"
+                                    :position "outer-middle"
+                                    :show true}}}}))
 
 (defn main []
-  chart
-  ; (om/root
-  ;   (fn [app owner]
-  ;     (reify
-  ;       om/IRender
-  ;       (render [_]
-  ;         (dom/h1 nil (:text app)))))
-  ;   app-state
-  ;   {:target (. js/document (getElementById "app"))})
-)
+  (chart))
