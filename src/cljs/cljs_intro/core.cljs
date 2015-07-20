@@ -12,7 +12,7 @@
   (.generate js/c3
     #js
     {:bindto "#chart"
-     :data #js {:columns #js ["data1" 30 200 100 400 150 250]
+     :data #js {:columns #js [ #js ["data1" 30 200 100 400 150 250]]
      :type "bar"}
      :bar #js {:width #js {:ratio 0.5}}
      :axis #js {:y #js {:label #js {:text "Signs up during the year"
